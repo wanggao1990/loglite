@@ -122,7 +122,7 @@ LOGLITE_API std::size_t sink_count() noexcept;
 
 LOGLITE_API void add_console_sink() noexcept;
 LOGLITE_API void add_file_sink_utf8(std::string_view utf8_path,
-                                    std::uint64_t max_bytes = 4ull << 20,
+                                    std::uint64_t max_bytes = 100ull << 20, // 100 MB
                                     int max_files = 3) noexcept;
 // `take_ownership=false` keeps the caller responsible for the sink's lifetime.
 LOGLITE_API void add_sink(Sink* sink, bool take_ownership = true) noexcept;
